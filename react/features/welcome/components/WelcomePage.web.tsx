@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import { connect } from 'react-redux';
 
 import { isMobileBrowser } from '../../base/environment/utils';
@@ -145,7 +145,15 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
         super.componentDidMount();
 
         document.body.classList.add('welcome-page');
-        document.title = interfaceConfig.APP_NAME;
+        //document.title = interfaceConfig.APP_NAME;
+
+        function WelcomePage() {
+        useEffect(() => {
+        document.title = "Omar Meet – Votre plateforme de réunion";
+        console.log("✅ Titre personnalisé appliqué");
+        }, []);
+        }
+
 
         if (this.state.generateRoomNames) {
             this._updateRoomName();
@@ -222,7 +230,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
                             }
                         </div>
                         <h1 className = 'header-text-title'>
-                            {t('welcomepage.headerTitle')}
+                             {t('welcomepage.headerTitle')}
                         </h1>
                         <span className = 'header-text-subtitle'>
                             {t('welcomepage.headerSubtitle')}
