@@ -42,7 +42,7 @@ interface IProps {
 }
 
 // eslint-disable-next-line no-confusing-arrow
-const VideoMenuTriggerButton = ({
+/*const VideoMenuTriggerButton = ({
     hidePopover,
     local,
     participantId = '',
@@ -71,6 +71,7 @@ const VideoMenuTriggerButton = ({
                 showPopover = { showPopover }
                 thumbnailType = { thumbnailType } />
         </span>
-    );
+    );*/
+const VideoMenuTriggerButton = () => null;
 
 export default VideoMenuTriggerButton;

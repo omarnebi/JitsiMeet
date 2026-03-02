@@ -203,7 +203,7 @@ var config = {
 
     // Start the conference in audio only mode (no video is being received nor
     // sent).
-    // startAudioOnly: false,
+     startAudioOnly: true,
 
     // Every participant after the Nth will start audio muted.
     // startAudioMuted: 10,
@@ -343,14 +343,9 @@ var config = {
     // util#browser#usesNewGumFlow. The constraints are independent from
     // this config's resolution value. Defaults to requesting an ideal
     // resolution of 720p.
-    // constraints: {
-    //     video: {
-    //         height: {
-    //             ideal: 720,
-    //             max: 720,
-    //             min: 240,
-    //         },
-    //     },
+    constraints: {
+      video: false
+     },
     // },
 
     // Enable / disable simulcast support.
@@ -361,7 +356,7 @@ var config = {
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    // startWithVideoMuted: false,
+     startWithVideoMuted: true,
 
     // Desktop sharing
 
@@ -893,6 +888,15 @@ var config = {
     //    'videoquality',
     //    'whiteboard',
     // ],
+
+    toolbarButtons: [
+    'microphone',
+    'hangup',
+    'chat',
+    'participants-pane',
+    'raisehand',
+    'settings'
+],
 
     // Holds values related to toolbar visibility control.
     // toolbarConfig: {

@@ -90,7 +90,6 @@ export const NATIVE_THRESHOLDS = [
  */
 export const MAIN_TOOLBAR_BUTTONS_PRIORITY = [
     'microphone',
-    'camera',
     'desktop',
     'chat',
     'raisehand',
@@ -100,8 +99,6 @@ export const MAIN_TOOLBAR_BUTTONS_PRIORITY = [
     'overflowmenu',
     'hangup',
     'invite',
-    'toggle-camera',
-    'videoquality',
     'fullscreen',
     'security',
     'closedcaptions',
@@ -143,7 +140,7 @@ export const SPINNER_COLOR = '#929292';
  * @type Array<string>
  */
 export const TOOLBAR_BUTTONS: ToolbarButton[] = [
-    'camera',
+    //'camera',
     'chat',
     'closedcaptions',
     'desktop',
@@ -177,8 +174,8 @@ export const TOOLBAR_BUTTONS: ToolbarButton[] = [
     'shortcuts',
     'stats',
     'tileview',
-    'toggle-camera',
-    'videoquality',
+    //'toggle-camera',
+    //'videoquality',
     'whiteboard'
 ];
 
@@ -189,7 +186,7 @@ export const TOOLBAR_BUTTONS: ToolbarButton[] = [
  * @type Array<string>
  */
 export const NATIVE_TOOLBAR_BUTTONS: NativeToolbarButton[] = [
-    'camera',
+    //'camera',
     'chat',
     'hangup',
     'microphone',
@@ -212,5 +209,5 @@ export const VISITORS_MODE_BUTTONS: ToolbarButton[] = [
     'settings',
     'stats',
     'tileview',
-    'videoquality'
+    //'videoquality'
 ];
