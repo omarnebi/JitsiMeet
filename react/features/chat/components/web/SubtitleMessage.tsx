@@ -1,9 +1,11 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { makeStyles } from 'tss-react/mui';
-
 import { getParticipantDisplayName } from '../../../base/participants/functions';
 import { ISubtitle } from '../../../subtitles/types';
+import { useState } from 'react';
+import React, { useRef } from 'react';
+
+
 
 /**
  * Props for the SubtitleMessage component.
@@ -66,6 +68,9 @@ const useStyles = makeStyles()(theme => {
     };
 });
 
+
+
+
 /**
  * Component that renders a single subtitle message with the participant's name,
  * message content, and timestamp.
@@ -73,24 +78,40 @@ const useStyles = makeStyles()(theme => {
  * @param {IProps} props - The component props.
  * @returns {JSX.Element} - The rendered subtitle message.
  */
-export default function SubtitleMessage({ participantId, text, timestamp, interim, showDisplayName }: IProps) {
+export default function SubtitleMessage({ participantId, text, timestamp, interim, showDisplayName, url }: IProps) {
     const { classes } = useStyles();
     const participantName = useSelector((state: any) =>
         getParticipantDisplayName(state, participantId));
+    //console.log("audio_paths:", audio_paths);
 
     return (
         <div className = { `${classes.messageContainer} ${interim ? classes.interim : ''}` }>
             <div className = { classes.messageContent }>
                 {showDisplayName && (
                     <div className = { classes.messageHeader }>
-                        {participantName}
+                        {participantName} 
+                        
                     </div>
                 )}
+                
                 <div className = { classes.messageText }>{text}</div>
                 <div className = { classes.timestamp }>
                     {new Date(timestamp).toLocaleTimeString()}
                 </div>
+                {!interim && text && (
+                    <>
+                    <audio controls src={`${url}`}
+                        style={{
+                        height: '30px',
+                        width: '200px',
+                        marginTop: '4px'
+                        }}
+                        />
+                    </>   
+                )}
+                
             </div>
         </div>
+        
     );
 }

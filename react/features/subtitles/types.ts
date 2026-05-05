@@ -20,4 +20,10 @@ export interface ISubtitle extends IGroupableMessage {
     participantId: string;
     text: string;
     timestamp: number;
+    translations?: { [lang: string]: string }; // added this 
+    url?: { [lang: string]: string }; // added this as filename it was audio_paths before
+    //audio_paths?: {[lang: string]: string; }; // added this 
+
+    
+    /*audio: string;*/
 }
